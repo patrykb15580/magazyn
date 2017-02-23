@@ -1,0 +1,23 @@
+{
+    "__comment": "Dodając repozytoria git'a, możemy pominąć pobieranie przez Packagist.",
+    "repositories": [
+        {
+          "type": "git",
+          "url": "https://github.com/boooklet/framework.git"
+        },
+        {
+          "type": "git",
+          "url": "https://github.com/boooklet/tester.git"
+        },
+        {
+          "type": "git",
+          "url": "https://github.com/boooklet/bkt_api"
+        }
+    ],
+    "require": {
+        "boooklet/framework": "dev-master",
+        "boooklet/tester": "dev-master",
+        "boooklet/bkt_api": "dev-master",
+        "sendgrid/sendgrid": "~5.1"
+    }
+}
