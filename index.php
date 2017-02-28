@@ -1,11 +1,17 @@
 <?php
-try {
+//try {
     // Apliaction setup
     include_once 'config/autoload.php';
     include_once 'config/application.php';
 
     // Routing
     include_once 'config/routing.php';
+
+    foreach (["lib/*.php", "config/*.php"] as $path) {
+        foreach (glob($path) as $file) { include_once $file; }
+    }
+
+    session_start();
 
     if (!$match) {
         echo Response::raiseError(404, ['Resource not found.']);
@@ -14,8 +20,8 @@ try {
 
     // Connect to mysql database
     // TODO
-    //$db_setup = 'db_'.Config::get('env');
-    //MyDB::connect(Config::get($db_setup));
+    $db_setup = 'db_'.Config::get('env');
+    MyDB::connect(Config::get($db_setup));
 
     // Run Controller#action
     if ($match) {
@@ -33,12 +39,12 @@ try {
 
         echo $body;
     }
-} catch (Throwable $t) {
-    if ($t->getCode() != 0) {
-        $error_code = $t->getCode();
-    } else {
-        $error_code = 500;
-    }
+//} catch (Throwable $t) {
+//    if ($t->getCode() != 0) {
+//        $error_code = $t->getCode();
+//    } else {
+//        $error_code = 500;
+//    }
 
-    echo Response::raiseError($error_code, [$t->getMessage()]);
-}
+//    echo Response::raiseError($error_code, [$t->getMessage()]);
+//}

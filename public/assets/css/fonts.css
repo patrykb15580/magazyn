@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "ClearSans";
+  src: url(/public/assets/fonts/ClearSans/ClearSans-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ClearSans Bold";
+  src: url(/public/assets/fonts/ClearSans/ClearSans-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ClearSans Thin";
+  src: url(/public/assets/fonts/ClearSans/ClearSans-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ClearSans Light";
+  src: url(/public/assets/fonts/ClearSans/ClearSans-Light.ttf) format("truetype");
+}
